@@ -1,0 +1,12 @@
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: GitHubTeam
+metadata:
+  labels:
+    app.kubernetes.io/name: githubteam
+    app.kubernetes.io/instance: githubteam-sample
+    app.kubernetes.io/part-of: vault-config-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: vault-config-operator
+  name: githubteam-sample
+spec:
+  # TODO(user): Add fields here
