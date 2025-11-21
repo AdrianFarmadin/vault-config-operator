@@ -1,0 +1,31 @@
+# permissions for end users to edit githubauthengineconfigs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: githubauthengineconfig-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: vault-config-operator
+    app.kubernetes.io/part-of: vault-config-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: githubauthengineconfig-editor-role
+rules:
+- apiGroups:
+  - redhatcop.redhat.io
+  resources:
+  - githubauthengineconfigs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - redhatcop.redhat.io
+  resources:
+  - githubauthengineconfigs/status
+  verbs:
+  - get
